@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <application
         android:label="escuela_app"
         android:name="${applicationName}"
@@ -8,7 +9,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:launchMode="singleTop"
+            android:launchMode="singleInstance"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
@@ -24,13 +27,16 @@
             </intent-filter>
         </activity>
 
-        <!-- Forzar renderizado por Vulkan (mejor compatibilidad) -->
+        <!-- 🔥 DESACTIVAR IMPELLER (CAUSA PANTALLA NEGRA EN XIAOMI) -->
         <meta-data
-            android:name="io.flutter.embedding.android.ImpellerBackend"
-            android:value="vulkan" />
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
 
+        <!-- ✅ FORZAR EMBEDDING V2 -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
     </application>
+
 </manifest>
