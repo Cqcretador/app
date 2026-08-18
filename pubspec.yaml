@@ -1,5 +1,5 @@
-name: escuela_app_nuevo
-description: A new Flutter project.
+name: app_escolar
+description: Sistema de Gestión Escolar
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,10 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  supabase_flutter: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
